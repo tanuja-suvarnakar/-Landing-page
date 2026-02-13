@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AcmeFlow Status | Platform Uptime</title>
+    <meta name="description"
+        content="Check the current status and historical uptime of the AcmeFlow platform and its components." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href="https://www.example.com/status.html" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="shell header-inner">
+            <a href="index.html#top" class="brand">
+                <span class="brand-mark">AF</span>
+                <span class="brand-text">
+                    <span class="brand-name">AcmeFlow</span>
+                    <span class="brand-tagline">B2B automation platform</span>
+                </span>
+            </a>
+            <nav class="nav" aria-label="Primary navigation">
+                <a href="index.html#features">Product</a>
+                <a href="index.html#how">How it works</a>
+                <a href="index.html#customers">Customers</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#faq">FAQ</a>
+            </nav>
+            <div class="header-cta">
+                <span>Need a walkthrough?</span>
+                <a href="index.html#pricing" class="btn btn-ghost">Talk to sales</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-labelledby="status-title">
+            <div class="shell">
+                <div class="section-heading">
+                    <div class="section-kicker">Status</div>
+                    <h1 class="section-title" id="status-title">Platform status & uptime.</h1>
+                    <p class="section-subtitle">
+                        View the current status of AcmeFlow services and recent incident history.
+                    </p>
+                </div>
+
+                <div class="feature-side-card reveal">
+                    <div style="font-weight:500;color:#e5e7eb;margin-bottom:0.4rem;">Current status</div>
+                    <div class="metric-row">
+                        <span>API & workflow engine</span>
+                        <span style="color:#22c55e;">Operational</span>
+                    </div>
+                    <div class="metric-row">
+                        <span>Web app</span>
+                        <span style="color:#22c55e;">Operational</span>
+                    </div>
+                    <div class="metric-row">
+                        <span>Integrations</span>
+                        <span style="color:#22c55e;">Operational</span>
+                    </div>
+                    <p style="margin-top:1rem;font-size:0.84rem;color:var(--text-muted);">
+                        For real‑time updates, subscribe to notifications on our hosted status page.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html#top" class="brand" aria-label="AcmeFlow home">
+                        <span class="brand-mark">AF</span>
+                        <span class="brand-text">
+                            <span class="brand-name">AcmeFlow</span>
+                            <span class="brand-tagline">B2B automation platform</span>
+                        </span>
+                    </a>
+                    <p class="footer-text">
+                        AcmeFlow is the workflow automation layer for B2B revenue teams, giving sales, success,
+                        and finance one coordinated system for every deal.
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-heading">Product</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#how">How it works</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Company</div>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Resources</div>
+                    <ul class="footer-links">
+                        <li><a href="documentation.html">Documentation</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="status.html">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© <span id="year"></span> AcmeFlow Inc. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="cookies.html">Cookie policy</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+
+</html>

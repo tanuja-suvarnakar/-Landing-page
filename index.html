@@ -1,0 +1,748 @@
+<!--
+gpt-5.1-high
+This landing page is a single‑page marketing site for AcmeFlow, a B2B workflow automation platform aimed at revenue and 
+operations leaders in SaaS, services, and other B2B companies. Its goal is to clearly explain what AcmeFlow does
+(automating lead routing, approvals, and handoffs across sales, CS, and finance), show the business impact
+(shorter sales cycles, fewer manual tasks), build trust (logos, testimonials, security/FAQ), and drive visitors to 
+submit the “Request a demo” form. The page contains a hero section with a live‑style pipeline panel, a product/features section,
+a “How it works” implementation overview, a customer story with quantified results, a pricing + demo request form,
+and supporting navigation to About, Careers, Partners, Documentation, Security, Status, and legal pages. It is designed
+for RevOps, Sales Ops, CS leaders, finance stakeholders, and other B2B decision‑makers who are evaluating workflow automation
+tools and need a clear, modern, and trustworthy overview before talking to sales.
+
+From a technical point of view, the landing page is built with semantic HTML5, custom CSS3
+(using CSS variables, Flexbox, and CSS Grid for layout, plus keyframe animations for motion),
+and a small amount of vanilla JavaScript to handle scroll‑reveal animations and the “Request a demo” form
+(front‑end only, preventing 404s on submit and showing a success message). It also includes basic SEO features
+(meta tags, Open Graph/Twitter tags, canonical URL) and structured data (JSON‑LD SoftwareApplication schema)
+to help search engines understand the product. The layout is fully responsive for desktop, tablet, and mobile without any external UI frameworks, making it easy to host as a static site.
+
+
+
+
+AcmeFlow Landing Page
+
+Purpose:
+- Single-page B2B marketing site for AcmeFlow, a workflow automation platform.
+- Target audience: RevOps, Sales Ops, Customer Success and Finance leaders at B2B companies.
+- Goals: explain what AcmeFlow does, show business impact, build trust, and drive demo requests.
+
+Contents:
+- Hero section with primary value proposition, CTA, and animated pipeline preview.
+- Trust strip with customer logos and rating.
+- Product/features section describing lead routing, approvals, and handoffs.
+- “How it works” section explaining implementation steps and KPIs.
+- Customer story/testimonial with quantified results.
+- Pricing + “Request a demo” form.
+- FAQ and footer links to About, Careers, Partners, Documentation, Security, Status, and legal pages.
+
+Technologies:
+- HTML5 for semantic structure.
+- CSS3 with custom properties, Flexbox, and CSS Grid for layout and responsive design.
+- CSS keyframe animations for hero card, orbits, and hover states.
+- Vanilla JavaScript for scroll-reveal animations and handling the demo form submit on the front end.
+- SEO meta tags, Open Graph/Twitter tags, and JSON-LD structured data (SoftwareApplication).
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic SEO -->
+    <meta charset="UTF-8" />
+    <title>AcmeFlow | Modern B2B Workflow Automation Platform</title>
+    <meta name="description"
+        content="AcmeFlow is a modern B2B workflow automation platform that helps revenue and operations teams streamline processes, eliminate manual work, and accelerate deals." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href="https://www.example.com/" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AcmeFlow | Modern B2B Workflow Automation Platform" />
+    <meta property="og:description"
+        content="Automate B2B workflows, centralize data, and keep revenue teams in sync with AcmeFlow." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.example.com/" />
+    <meta property="og:image" content="https://www.example.com/assets/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AcmeFlow | Modern B2B Workflow Automation Platform" />
+    <meta name="twitter:description"
+        content="Automate B2B workflows, centralize data, and keep revenue teams in sync with AcmeFlow." />
+    <meta name="twitter:image" content="https://www.example.com/assets/og-image.jpg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AcmeFlow",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.example.com/",
+    "description": "B2B workflow automation software that helps teams streamline processes and increase productivity.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "AcmeFlow Inc.",
+      "url": "https://www.example.com/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "49.00",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="shell header-inner">
+            <a href="#top" class="brand">
+                <span class="brand-mark">AF</span>
+                <span class="brand-text">
+                    <span class="brand-name">AcmeFlow</span>
+                    <span class="brand-tagline">B2B automation platform</span>
+                </span>
+            </a>
+            <nav class="nav" aria-label="Primary navigation">
+                <a href="#features">Product</a>
+                <a href="#how">How it works</a>
+                <a href="#customers">Customers</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="header-cta">
+                <span>Need a walkthrough?</span>
+                <a href="#pricing" class="btn btn-ghost">Talk to sales</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="top">
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="shell hero-inner">
+                <div class="hero-left">
+                    <div class="hero-pill">
+                        <span class="hero-pill-dot"></span>
+                        Purpose‑built for revenue & operations teams
+                    </div>
+                    <div class="hero-kicker">B2B workflow automation platform</div>
+                    <h1 class="hero-title" id="hero-title">
+                        Turn messy <span>revenue workflows</span> into one coordinated system.
+                    </h1>
+                    <p class="hero-subtitle">
+                        AcmeFlow orchestrates routing, approvals, and handoffs across sales, customer success,
+                        and finance — replacing manual spreadsheets with automation that scales.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#pricing" class="btn btn-primary">Book a live demo</a>
+                        <button type="button" class="btn-link"
+                            onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'});">
+                            Explore the product <span>→</span>
+                        </button>
+                    </div>
+                    <div class="hero-meta">
+                        <div class="hero-rating-pill">
+                            <span>★</span>
+                            4.9 / 5 on G2
+                        </div>
+                        <div>
+                            Trusted by <strong>500+ B2B teams</strong> in SaaS, services, and industrial markets.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="hero-orbit-bg" aria-hidden="true">
+                        <div class="hero-orbit-ring"></div>
+                        <div class="hero-orbit-ring"></div>
+                        <div class="hero-orbit-ring"></div>
+                    </div>
+                    <div class="hero-panel-stack">
+                        <div class="hero-panel-shadow" aria-hidden="true"></div>
+                        <aside class="hero-panel" aria-label="Live revenue workflow overview">
+                            <div class="hero-panel-header">
+                                <div>
+                                    <div class="hero-panel-title">Q3 automated pipeline board</div>
+                                    <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.1rem;">
+                                        Global rev team · 126 open opportunities
+                                    </div>
+                                </div>
+                                <div class="hero-panel-badge">Automation on</div>
+                            </div>
+
+                            <div class="stage-rail">
+                                <div class="stage-pill is-active">New</div>
+                                <div class="stage-pill">Qualified</div>
+                                <div class="stage-pill">Negotiation</div>
+                                <div class="stage-pill">Closed won</div>
+                            </div>
+
+                            <div class="board-grid">
+                                <div class="board-column">
+                                    <div class="board-column-header">
+                                        <div class="board-column-title">New leads</div>
+                                        <span class="board-count">32</span>
+                                    </div>
+                                    <div class="deal-chip">
+                                        <div>
+                                            <span class="deal-name">Northwind · Expansion</span>
+                                            <span class="deal-meta">Auto‑routed · SLA 15m</span>
+                                        </div>
+                                        <span class="deal-amount">$84k</span>
+                                    </div>
+                                    <div class="deal-chip">
+                                        <div>
+                                            <span class="deal-name">Globex · New logo</span>
+                                            <span class="deal-meta">Priority · Marketing intent</span>
+                                        </div>
+                                        <span class="deal-amount">$132k</span>
+                                    </div>
+                                </div>
+                                <div class="board-column">
+                                    <div class="board-column-header">
+                                        <div class="board-column-title">Approvals in progress</div>
+                                        <span class="board-count">7</span>
+                                    </div>
+                                    <div class="deal-chip">
+                                        <div>
+                                            <span class="deal-name">Contoso · Renewal</span>
+                                            <span class="deal-meta">Discount + legal review</span>
+                                        </div>
+                                        <span class="deal-amount">$210k</span>
+                                    </div>
+                                    <div class="deal-chip">
+                                        <div>
+                                            <span class="deal-name">Innotech · Pilot</span>
+                                            <span class="deal-meta">Ops owner: M. Lopez</span>
+                                        </div>
+                                        <span class="deal-amount">$46k</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-panel-footer">
+                                <div>
+                                    <strong>-32%</strong> average sales cycle
+                                    <span style="display:block;color:var(--text-muted);margin-top:0.1rem;">
+                                        with automated approvals & routing.
+                                    </span>
+                                </div>
+                                <div class="hero-tag-pills">
+                                    <span class="hero-tag">Lead routing</span>
+                                    <span class="hero-tag">Deal approvals</span>
+                                    <span class="hero-tag">CS handoffs</span>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust -->
+        <section class="trust" aria-label="Companies that use AcmeFlow">
+            <div class="shell">
+                <div class="trust-inner">
+                    <div>AcmeFlow powers revenue workflows for high‑growth B2B companies worldwide.</div>
+                    <div class="trust-logos" aria-hidden="true">
+                        <div class="trust-logo">Nexus</div>
+                        <div class="trust-logo">Northwind</div>
+                        <div class="trust-logo">Globex</div>
+                        <div class="trust-logo">Contoso</div>
+                        <div class="trust-logo">Innotech</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="features" aria-labelledby="features-title">
+            <div class="shell">
+                <header class="section-heading">
+                    <div class="section-kicker">Product</div>
+                    <h2 class="section-title" id="features-title">
+                        One platform for the entire B2B revenue workflow.
+                    </h2>
+                    <p class="section-subtitle">
+                        Replace scattered tools and manual processes with a single automation layer that connects
+                        your CRM, finance stack, and go‑to‑market teams.
+                    </p>
+                </header>
+
+                <div class="feature-layout">
+                    <ul class="feature-list">
+                        <li class="feature-item reveal">
+                            <div class="feature-icon" aria-hidden="true">↪</div>
+                            <div class="feature-text-block">
+                                <h3>Intelligent lead routing</h3>
+                                <p>
+                                    Route leads based on territory, account owner, buying signals, or custom rules —
+                                    without writing code or relying on IT.
+                                </p>
+                                <div class="feature-tagline">
+                                    Keep speed‑to‑lead under 5 minutes for every inbound opportunity.
+                                </div>
+                            </div>
+                        </li>
+                        <li class="feature-item reveal">
+                            <div class="feature-icon" aria-hidden="true">✔</div>
+                            <div class="feature-text-block">
+                                <h3>Approval workflows that just happen</h3>
+                                <p>
+                                    Standardize discount, pricing, and legal approvals with clear owners, SLAs, and
+                                    audit trails for every decision.
+                                </p>
+                                <div class="feature-tagline">
+                                    Finance and legal get guardrails; sales gets fewer bottlenecks.
+                                </div>
+                            </div>
+                        </li>
+                        <li class="feature-item reveal">
+                            <div class="feature-icon" aria-hidden="true">∞</div>
+                            <div class="feature-text-block">
+                                <h3>Handoffs & renewals without gaps</h3>
+                                <p>
+                                    Trigger onboarding and renewal playbooks automatically as deals move in your CRM,
+                                    so CS always has context before calls.
+                                </p>
+                                <div class="feature-tagline">
+                                    Protect NRR by making transitions feel effortless for customers.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <aside class="feature-side-card reveal" aria-label="Why teams switch to AcmeFlow">
+                        <div style="font-weight:500;color:#e5e7eb;margin-bottom:0.45rem;">
+                            Why RevOps teams replace homegrown tooling with AcmeFlow
+                        </div>
+                        <p style="margin:0;">
+                            No more brittle scripts, spreadsheets, or point solutions. AcmeFlow gives you a central
+                            place to design, monitor, and improve every revenue workflow — without losing the
+                            flexibility your business needs.
+                        </p>
+                        <div class="metric-row">
+                            <span>Playbooks launched</span>
+                            <span>2500+ per day</span>
+                        </div>
+                        <div class="metric-row">
+                            <span>Average manual steps removed</span>
+                            <span>18 hrs / AE / week</span>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section id="how" aria-labelledby="how-title">
+            <div class="shell how-layout">
+                <div>
+                    <header class="section-heading">
+                        <div class="section-kicker">How it works</div>
+                        <h2 class="section-title" id="how-title">From discovery to deployment in four weeks.</h2>
+                        <p class="section-subtitle">
+                            Our team works alongside your RevOps and IT leads to roll out AcmeFlow with a clear,
+                            low‑risk implementation plan.
+                        </p>
+                    </header>
+
+                    <ul class="steps-list">
+                        <li class="step-item reveal">
+                            <div class="step-index">1</div>
+                            <div>
+                                <h3>Map your current workflows</h3>
+                                <p>
+                                    We document your lead, deal, and handoff processes and identify where automation
+                                    can remove friction without adding risk.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="step-item reveal">
+                            <div class="step-index">2</div>
+                            <div>
+                                <h3>Configure automations in AcmeFlow</h3>
+                                <p>
+                                    Together we build routing rules, approval paths, and handoff playbooks, all synced
+                                    to your CRM and collaboration tools.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="step-item reveal">
+                            <div class="step-index">3</div>
+                            <div>
+                                <h3>Launch, iterate, and expand</h3>
+                                <p>
+                                    Start with one team or region, then expand once you’ve proven impact. Our customer
+                                    success team stays involved as you grow.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <aside class="how-card reveal" aria-label="Implementation metrics">
+                    <div style="font-size:0.84rem;color:#e5e7eb;margin-bottom:0.4rem;">
+                        Typical customer rollout · mid‑market B2B SaaS
+                    </div>
+                    <p style="margin:0;">
+                        Most AcmeFlow customers go live in under 6 weeks, starting with a focused deployment that
+                        proves ROI before expanding.
+                    </p>
+
+                    <div class="how-kpi-grid">
+                        <div>
+                            <div class="how-kpi-label">Time to first live workflow</div>
+                            <div class="how-kpi-value">10 days</div>
+                            <div style="font-size:0.78rem;color:var(--text-muted);">
+                                With our implementation team and templates.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="how-kpi-label">Systems integrated</div>
+                            <div class="how-kpi-value">3–5</div>
+                            <div style="font-size:0.78rem;color:var(--text-muted);">
+                                CRM, chat, contracts, billing, and more.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="how-kpi-label">Team training time</div>
+                            <div class="how-kpi-value">2 hrs</div>
+                            <div style="font-size:0.78rem;color:var(--text-muted);">
+                                For admins and workflow owners.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="how-kpi-label">Payback period</div>
+                            <div class="how-kpi-value">3–6 mo</div>
+                            <div style="font-size:0.78rem;color:var(--text-muted);">
+                                Based on average customer results.
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="customers" class="testimonials" aria-labelledby="customers-title">
+            <div class="shell">
+                <header class="section-heading">
+                    <div class="section-kicker">Customer stories</div>
+                    <h2 class="section-title" id="customers-title">
+                        B2B teams cut cycle times and increase forecast confidence with AcmeFlow.
+                    </h2>
+                </header>
+
+                <div class="test-layout">
+                    <article class="reveal">
+                        <p class="quote">
+                            “Before AcmeFlow, every deal over a certain size required an email maze between sales,
+                            finance, and legal. Now approvals just happen. Our enterprise sales cycle is 30% faster,
+                            and forecast calls finally match reality.”
+                        </p>
+                        <div class="quote-author">
+                            <strong>Maria Lopez</strong>, VP Revenue Operations
+                            <span>Northwind Software · Series C B2B SaaS · 380 employees</span>
+                        </div>
+                    </article>
+
+                    <aside class="test-card reveal" aria-label="Northwind metrics with AcmeFlow">
+                        <div class="test-badge">
+                            <span></span>
+                            Verified results
+                        </div>
+                        <div class="test-stat-row">
+                            <span>Time to implement</span>
+                            <strong>5 weeks</strong>
+                        </div>
+                        <div class="test-stat-row">
+                            <span>Manual approvals automated</span>
+                            <strong>84%</strong>
+                        </div>
+                        <div class="test-stat-row">
+                            <span>Average sales cycle</span>
+                            <strong>-29%</strong>
+                        </div>
+                        <div class="test-stat-row">
+                            <span>Net revenue retention</span>
+                            <strong>+7 pts YoY</strong>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing & demo form -->
+        <section id="pricing" aria-labelledby="pricing-title">
+            <div class="shell pricing-layout">
+                <div>
+                    <header class="section-heading">
+                        <div class="section-kicker">Pricing</div>
+                        <h2 class="section-title" id="pricing-title">Simple pricing that scales with your team.</h2>
+                    </header>
+                    <p class="pricing-note">
+                        Start with a focused deployment for one team, then expand as you prove ROI. No hidden fees,
+                        no surprise add‑ons — just transparent per‑user pricing.
+                    </p>
+                    <ul class="pricing-list">
+                        <li>Per‑user pricing with discounts for 25+ and 100+ seat deployments.</li>
+                        <li>Implementation support and workflow design included in every plan.</li>
+                        <li>Dedicated customer success manager for accounts over 25 seats.</li>
+                    </ul>
+                    <p class="pricing-note">
+                        Most customers see a full return on investment within the first 3–6 months.
+                    </p>
+                </div>
+
+                <aside class="pricing-card reveal" aria-label="Request an AcmeFlow demo">
+                    <div class="pricing-label">Growth plan · from</div>
+                    <div class="pricing-price">
+                        $49
+                        <span>/ user / month · billed annually</span>
+                    </div>
+                    <p class="pricing-fine">
+                        Includes all core workflow automation features, standard integrations, and support. Enterprise
+                        options available for advanced security and governance.
+                    </p>
+
+                    <form id="demo-form" aria-label="Request a demo form">
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="first-name" class="form-label">First name</label>
+                                <input id="first-name" name="first-name" type="text" class="input"
+                                    autocomplete="given-name" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="last-name" class="form-label">Last name</label>
+                                <input id="last-name" name="last-name" type="text" class="input"
+                                    autocomplete="family-name" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="email" class="form-label">Work email</label>
+                                <input id="email" name="email" type="email" class="input" autocomplete="email" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="company" class="form-label">Company</label>
+                                <input id="company" name="company" type="text" class="input" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="team-size" class="form-label">Team size</label>
+                                <select id="team-size" name="team-size" class="select" required>
+                                    <option value="">Select</option>
+                                    <option value="1-10">1–10</option>
+                                    <option value="11-50">11–50</option>
+                                    <option value="51-200">51–200</option>
+                                    <option value="200+">200+</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="crm" class="form-label">Primary CRM</label>
+                                <select id="crm" name="crm" class="select">
+                                    <option value="">Select</option>
+                                    <option value="salesforce">Salesforce</option>
+                                    <option value="hubspot">HubSpot</option>
+                                    <option value="dynamics">Microsoft Dynamics</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="goals" class="form-label">What are you looking to improve?</label>
+                                <textarea id="goals" name="goals" class="textarea"
+                                    placeholder="E.g. automate approvals, fix handoffs, improve forecast accuracy."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-footer">
+                            <button type="submit" class="btn btn-primary">Request a demo</button>
+                            <div>We’ll follow up within one business day. No spam, ever.</div>
+                        </div>
+                    </form>
+                </aside>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" aria-labelledby="faq-title">
+            <div class="shell">
+                <header class="section-heading">
+                    <div class="section-kicker">FAQ</div>
+                    <h2 class="section-title" id="faq-title">
+                        Frequently asked questions about AcmeFlow.
+                    </h2>
+                </header>
+
+                <div class="faq-inner">
+                    <details class="reveal">
+                        <summary>
+                            How long does it take to implement AcmeFlow?
+                            <span class="faq-toggle">+</span>
+                        </summary>
+                        <p>
+                            Most B2B customers go live in 4–6 weeks. Our team maps your current workflows,
+                            configures automations, and trains your admins and end‑users. Complex, multi‑region
+                            deployments may take longer, but we guide you through each step.
+                        </p>
+                    </details>
+
+                    <details class="reveal">
+                        <summary>
+                            Which CRMs and tools does AcmeFlow integrate with?
+                            <span class="faq-toggle">+</span>
+                        </summary>
+                        <p>
+                            We offer native integrations with Salesforce, HubSpot, Microsoft Dynamics, Slack,
+                            Google Workspace, and major data warehouses. Our API and webhook framework make it
+                            easy to connect other B2B tools in your stack.
+                        </p>
+                    </details>
+
+                    <details class="reveal">
+                        <summary>
+                            Is AcmeFlow secure and enterprise‑ready?
+                            <span class="faq-toggle">+</span>
+                        </summary>
+                        <p>
+                            Yes. AcmeFlow is built for modern B2B enterprises, with SSO (SAML/OIDC), role‑based
+                            access controls, audit logging, and encryption in transit and at rest. Our team
+                            can support your security review and vendor assessment process.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell">
+            <div class="footer-grid">
+                <div>
+                    <a href="#top" class="brand" aria-label="AcmeFlow home">
+                        <span class="brand-mark">AF</span>
+                        <span class="brand-text">
+                            <span class="brand-name">AcmeFlow</span>
+                            <span class="brand-tagline">B2B automation platform</span>
+                        </span>
+                    </a>
+                    <p class="footer-text">
+                        AcmeFlow is the workflow automation layer for B2B revenue teams, giving sales, success,
+                        and finance one coordinated system for every deal.
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-heading">Product</div>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how">How it works</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Company</div>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Resources</div>
+                    <ul class="footer-links">
+                        <li><a href="documentation.html">Documentation</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="status.html">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© <span id="year"></span> AcmeFlow Inc. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="cookies.html">Cookie policy</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Dynamic year in footer
+            document.getElementById("year").textContent = new Date().getFullYear();
+
+            // Scroll reveal
+            function initReveal() {
+                document.body.classList.add("js-enabled");
+                const els = document.querySelectorAll(".reveal");
+                if (!("IntersectionObserver" in window)) {
+                    els.forEach(el => el.classList.add("is-visible"));
+                    return;
+                }
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("is-visible");
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.18 });
+
+                els.forEach(el => observer.observe(el));
+            }
+
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", initReveal);
+            } else {
+                initReveal();
+            }
+
+            // Handle demo form submission on the front-end only
+            const demoForm = document.getElementById("demo-form");
+            if (demoForm) {
+                demoForm.addEventListener("submit", function (e) {
+                    e.preventDefault(); // stop the browser sending a POST and causing 404
+
+                    const submitBtn = demoForm.querySelector('button[type="submit"]');
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = "Request sent";
+                    }
+
+                    // Remove any existing success message
+                    const oldMsg = demoForm.querySelector(".demo-success-message");
+                    if (oldMsg) oldMsg.remove();
+
+                    // Add a success message under the footer text
+                    const msg = document.createElement("div");
+                    msg.className = "form-hint demo-success-message";
+                    msg.style.color = "#22c55e";
+                    msg.style.marginTop = "0.4rem";
+                    msg.textContent = "Thanks! We’ve received your request and will be in touch shortly.";
+
+                    const footer = demoForm.querySelector(".form-footer");
+                    if (footer) {
+                        footer.appendChild(msg);
+                    } else {
+                        demoForm.appendChild(msg);
+                    }
+                });
+            }
+        </script>
+    </footer>
+</body>
+
+</html>
